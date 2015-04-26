@@ -16,7 +16,7 @@
 //your code here
 function uselessFunction()
 {
-    return NULL;
+    return null;
 }
 
 //end your code
@@ -35,14 +35,19 @@ var barType = typeof bar;
 */
 
 //your code here
-a = float[x];
-function doubleArray(a)
+
+bar = function (a)
     {
         var i = 0;
-        for(i; i<x+1;i++)
+        for(i; i<a.length;i++)
         {
-            float[i] = float[i]*2;
+            if (isNaN(a[i]))
+            {
+                return false;
+            }       
+            a[i] = a[i]*2;
         }
+        return true;
     }
 //end your code
 
@@ -53,9 +58,9 @@ function doubleArray(a)
 * @property {Date} date - the date of the commit as a JS Date object
 * @property {string} message - the commit message
 */
-function GitLog(hash, date, message) {
+function GitLog(hash, dateString, message) {
     this.hash = hash;
-    this.date = date;
+    this.date = new Date(dateString);
     this.message = message;
 }
 
@@ -79,7 +84,20 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
-function logArray(Gitlog) {
+function parseGit(logArray)
+{
+    var gitArray = new Array();
+    for (var i = 0; i < logArray.length; i++)
+    {
+        var str = logArray[i];
+        var hash = str.substr(0,str.indexOf(' '));
+        var str2 = str.substr(str.indexOf(' ')+1);
+        var date = str2.substr(0, str2.indexOf('"')).trim();
+        var message = str2.substr(str2.indexOf('"') + 1, str2.length - 1 - str2.indexOf('"') - 1);
+        gitArray[i] = new GitLog(hash, date, message);
+        
 
-}???????
+    }
+    return gitArray;
+}
 //end your code
