@@ -1,1 +1,15 @@
-You log goes in this  file.
+Start:
+End: Sun, 26 Apr 2015 00:03:32 -0700
+Tasks: objects.js done
+Start:
+End: Sat, 25 Apr 2015 23:18:23 -0700
+Tasks: variable.js done
+Start:
+End: Sat, 25 Apr 2015 23:09:04 -0700
+Tasks: function.js done
+Start:
+End: Sat, 25 Apr 2015 21:40:14 -0700
+Tasks: update src files
+Start:
+End: Sat, 25 Apr 2015 21:20:22 -0700
+Tasks: first commit
